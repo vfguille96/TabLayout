@@ -26,22 +26,19 @@ public class ProductFragmentAdapter extends FragmentPagerAdapter {
     public Fragment getItem(int position) {
         switch (position) {
             case 0:
-                ProductInfoFragment.newInstance();
+                return ProductInfoFragment.newInstance();
             case 1:
-                ProductDescriptionFragment.newInstance();
+                return ProductDescriptionFragment.newInstance();
             case 2:
-                ProductMapFragment.newInstance();
-            default:
-                return null;
+                return ProductMapFragment.newInstance();
         }
+        return null;
     }
 
     @Nullable
     @Override
     public CharSequence getPageTitle(int position) {
-        return super.getPageTitle(position);
-
-
+        return title.get(position);
     }
 
     @Override
